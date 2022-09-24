@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/mall?useSSL=true&allowMultiQueries=true&serverTimezone=UTC
+    username: root
+    password: Demo1234
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+        connection:
+          release_mode: auto

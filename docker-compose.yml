@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  db:
+    image: mysql:8
+    restart: always
+    ports:
+      - 3306:3306
+    volumes:
+      - mysql8:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: Demo1234
+volumes:
+  mysql8: {}
