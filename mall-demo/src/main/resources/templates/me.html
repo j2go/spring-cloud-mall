@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<!-- thymeleaf模板必须引入、 thymeleaf与springsecurity5整合的标签必须引入-->
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5" >
+<head>
+    <title>SpringBoot模版渲染</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+</head>
+<body>
+index
+<form th:action="@{/logout}" method="get" >
+    <button type="submit" >退出</button>
+</form>
+<!-- springsecurity5标签的使用，是否已授权 -->
+<div sec:authorize="isAuthenticated()">
+    <p>已登录</p >
+
+    <p>登录名：<span sec:authentication="name"></span></p >
+
+    <p>角色权限：<span sec:authentication="principal.authorities"></span></p >
+
+    <p>Username：<span sec:authentication="principal.username"></span></p >
+
+    <p>拥有的角色：
+        <!-- 角色判断，是否拥有某个角色，从authorities取值判断 -->
+        <span sec:authorize="hasRole('ROLE_ADMIN')">管理员</span>
+        <!-- 授权判断，是否拥有某种授权，从authorities取值判断 -->
+        <span sec:authorize="hasAnyAuthority('ROLE_ADMINISTRATOR')" >超级管理员</span>
+        <!-- 授权判断，是否拥有某种授权，从authorities取值判断 -->
+        <span sec:authorize="hasPermission('index','read')" >bbb</span>
+        <!-- 授权判断，是否拥有某种授权，从authorities取值判断 -->
+        <span sec:authorize="hasAnyAuthority('index:write')" >eeee</span>
+    </p >
+</div>
+</body>
+</html>

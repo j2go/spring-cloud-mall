@@ -11,3 +11,6 @@ spring:
           auto: update
         connection:
           release_mode: auto
+logging:
+  level:
+    root: info
