@@ -32,10 +32,10 @@ public class HomeController {
         return "/reg";
     }
 
-    @GetMapping("/login")
-    public String login() {
-        return "/login";
-    }
+//    @GetMapping("/login")
+//    public String login() {
+//        return "/login";
+//    }
 
     @GetMapping("/me")
     public String me() {

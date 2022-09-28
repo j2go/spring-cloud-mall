@@ -33,7 +33,7 @@ public class WebSecurity {
                 .ignoringAntMatchers("/message/**")
                 .and()
                 .formLogin()
-                .loginPage("/login")
+//                .loginPage("/login")
                 // 支持跳转登录认证之前的链接的 Handler
                 .successHandler(new SavedRequestAwareAuthenticationSuccessHandler())
                 .usernameParameter("username")
