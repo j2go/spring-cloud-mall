@@ -5,22 +5,25 @@ import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Index;
+import javax.persistence.Table;
 import java.util.Collection;
 import java.util.Collections;
 
 @Entity
 @Getter
 @Setter
+@Table(name = "user", indexes = {@Index(name = "ix_username", columnList = "username", unique = true)})
 public class User extends BaseEntity implements UserDetails {
-
-    private String uid;
 
     private String username;
 
     private String password;
 
     private String nickname;
+    
+    private String email;
 
     private Long phone;
 
@@ -32,12 +35,12 @@ public class User extends BaseEntity implements UserDetails {
     /**
      * 头像
      */
-    private String icon;
+    private String icon = "";
 
     /**
      * 性别：0->未知；1->男；2->女
      */
-    private Byte gender;
+    private Byte gender = 0;
 
     /**
      * 生日

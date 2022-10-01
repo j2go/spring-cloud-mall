@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:2306/mall-demo?useSSL=true&allowMultiQueries=true&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/mall-demo?useSSL=true&allowMultiQueries=true&serverTimezone=UTC
     username: root
-    password: 1234qweR
+    password: Demo1234
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect
     properties:

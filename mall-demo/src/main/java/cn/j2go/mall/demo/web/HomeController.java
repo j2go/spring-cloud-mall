@@ -37,11 +37,6 @@ public class HomeController {
         return "/login";
     }
 
-    @GetMapping("/me")
-    public String me() {
-        return "/me";
-    }
-
     @PostMapping("/reg")
     public String regMember(String username, String password) {
         User user = new User();
